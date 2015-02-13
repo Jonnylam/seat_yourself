@@ -7,12 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <div class="nav">
+        <div class="container">
+          <div class b= "row">
+         <div class="col-md-4">
+           </div>
+        </div>
+             <div class = "col-md-4">
+               </div>
+               <div class = "col-md-4">
+               </div>
+              <div class = "navtitles">
+            <ul class = "pull-left">
+                  <li><a href = "/restaurants">View All Restaurants</a></li>
+                  <li><a href="/restaurants">Find a Restaurant</a></li>
+                <!--   <li><a href="/contacts/show_contact">View a contact</a></li>
+                  <li><a href="">Delete a contact</a></li>
+                  <li><a href="">Display an attribute</a></li> -->
+                  <li><a>
+      <% if current_user %>
+        Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+      <% else %>
+        <%= link_to "Log in", new_session_path %> <%= link_to "Sign up", new_user_path %>
+      <% end %>
+    </a></li>
+                </ul>
+            </div>  
+        </div>
+    </div>
+  </nav>
 	    <% if flash[:notice] %>
-      <p id="notice"><%= flash[:notice] %></p>
-    <% end %>
-    <% if flash[:alert] %>
-      <p id="alert"><%= flash[:alert] %></p>
-    <% end %>
+         <p id="notice"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p id="alert"><%= flash[:alert] %></p>
+      <% end %>
 
 
 <%= yield %>
