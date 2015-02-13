@@ -1,3 +1,11 @@
+<h1> Search for a restaurant to make a reservation </h1>
+<%= form_tag restaurants_search_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search for a Restaurant", :name => nil %>
+  </p>
+<% end %>
+
 <h1>Restaurants</h1>
 
 <% @restaurants.each do |restaurant| %>

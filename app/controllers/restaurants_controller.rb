@@ -5,6 +5,7 @@ class RestaurantsController < ApplicationController
 
 	def index
 		@restaurants = Restaurant.all
+		@search = Restaurant.search(params[:search])
 	end
 
 	def new
@@ -13,6 +14,11 @@ class RestaurantsController < ApplicationController
 
 	def show
 		@restaurant = find_restaurant
+
+		if current_user
+			# @reservation = @restaurant.reservations.build
+			@reservation = Reservation.new
+		end
 	end
 
 	def create
@@ -45,6 +51,13 @@ class RestaurantsController < ApplicationController
 		redirect_to restaurants_url
 	end
 
+	def search
+		@restaurants = Restaurant.search(params[:search])
+		render :index
+		# flash[:notice] = @restaurant.errors.full_messages.to_sentence
+	end
+
+	
 	private
 	def restaurant_params
 		params.require(:restaurant).permit(:name, :capacity, :opens_at, :closes_at, 

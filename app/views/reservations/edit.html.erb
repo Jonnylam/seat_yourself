@@ -1,0 +1,15 @@
+<h1>Reservations#edit</h1>
+<p>Find me in app/views/reservations/edit.html.erb</p>
+
+
+<%= form_for ([@restaurant, @reservation]) do |f| %>
+	  <div class="field">
+	    <%= f.label :party_size %><br/>
+	    <%= f.number_field :party_size %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :booking %><br/>
+	    <%= f.datetime_field :booking %>
+	  </div>
+	  <div class="actions"><%= f.submit "Change Your Reservation" %></div>
+	<% end %>
