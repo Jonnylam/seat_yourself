@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 
   get '/restaurants/search' => 'restaurants#search'
   post '/restaurants/search' => 'restaurants#search'
+  get 'restaurants/all' => 'restaurants#all'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create] 
   resources :restaurants do 
-    resources :reservations
+  resources :reservations
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

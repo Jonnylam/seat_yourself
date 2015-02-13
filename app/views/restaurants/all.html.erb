@@ -1,0 +1,13 @@
+<h1>List of All The Restaurants</h1>
+
+<% @restaurants.each do |restaurant| %>
+
+	<p><strong>Picture: </strong><%= restaurant.picture_url %></p>
+	<h2><%= restaurant.name %></h2>
+
+	
+	<p><strong>Description: </strong><%= restaurant.description %></p>
+
+	<%= link_to "View Details", restaurant_url(restaurant) %><br><br>
+	<%= link_to "Make a Reservation", new_restaurant_reservation_path(restaurant, @restaurant_reservation) %>
+<% end %>

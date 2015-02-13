@@ -6,10 +6,10 @@
 	<%= f.number_field :capacity %><br>
 
 	<%= f.label :opens_at %> 
-	<%= f.time_field :opens_at %>	<br>
+	<%= f.select(:opens_at, options_for_select([['9:00', 9], ['10:00', 10], ['11:00', 11], ['12:00', 12]])) %>	<br>
 
 	<%= f.label :closes_at %> 
-	<%= f.time_field :closes_at %><br>	
+	<%= f.select(:closes_at, options_for_select([['20:00', 9], ['21:00', 10], ['22:00', 11], ['23:00', 12]])) %><br>	
 
 	<%= f.label :description %> 
 	<%= f.text_field :description %><br>	

@@ -3,6 +3,10 @@ class RestaurantsController < ApplicationController
 		Restaurant.find(params[:id])
 	end
 
+	def all
+		@restaurants = Restaurant.all
+	end
+
 	def index
 		@restaurants = Restaurant.all
 		@search = Restaurant.search(params[:search])
@@ -53,7 +57,7 @@ class RestaurantsController < ApplicationController
 
 	def search
 		@restaurants = Restaurant.search(params[:search])
-		render :index
+		render :all
 		# flash[:notice] = @restaurant.errors.full_messages.to_sentence
 	end
 
