@@ -3,6 +3,10 @@ def random_hour(from, to)
   (Date.today + rand(from..to).hour + rand(0..60).minutes).to_datetime
 end
 
+# def hour(opening_time, closing_time)
+
+# end
+
 puts "\nCreating users"
 100.times do
 	User.create!(
@@ -35,6 +39,7 @@ puts "\nCreating reservations"
 		reservation_name: Faker::Name.name,
 		phone_number: Faker::PhoneNumber.phone_number, 
 		party_size: [1,3,4,6,10].sample,
+		date: Faker::Date.between(Date.today, 7.days.from_now),
 		time: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].sample,
 		user_id: User.all.sample.id,
 		restaurant_id: Restaurant.all.sample.id

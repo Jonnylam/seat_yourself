@@ -4,7 +4,7 @@
 
 <h2><%= @restaurant.name %></h2>
 <p><strong>Capacity: </strong><%= @restaurant.capacity %></p>
-<p><strong>Hours: </strong><%= @restaurant.opens_at%> - <%= @restaurant.closes_at %></p>
+<p><strong>Hours: </strong><%= @restaurant.opens_at%>:00 - <%= @restaurant.closes_at %>:00</p>
 <p><strong>Description: </strong><%= @restaurant.description %></p>
 <p><strong>Address: </strong><%= @restaurant.address %></p>
 <p><strong>Phone: </strong><%= @restaurant.phone %></p>
@@ -21,6 +21,8 @@
 			<%= reserve.phone_number %><br>
 	    Party Size:
 	        <%= reserve.party_size %><br>
+	    Booking Date:
+	    	<%= reserve.date %>
 	    Booking Time:
 	        <%= reserve.time %>:00
 	    		<% if reserve.user != nil %><br>
