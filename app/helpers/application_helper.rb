@@ -15,7 +15,7 @@ module ApplicationHelper
 	def seven_days
 		seven_days.where(Date.today..1.week.from_now)
 	end
-end
+ends
 
 
 	# def reservation_time_options(restaurant)
